@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shoping Cart</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+</head>
+<body>
+  <nav>
+    <a href="#" class="active" onclick="openTab(event, 'content')">Home</a>
+    <a href="#" onclick="openTab(event, 'imageContainer')">Products</a>
+    <a href="#" onclick="openTab(event, 'cartContainer')">Cart</a>
+  </nav>
+      
+      <div id="content" class="tabcontent active">
+        <h1>Add Image</h1>
+	<form>
+		<label for="image">Image:</label>
+		<input type="file" id="image" name="image"><br><br>
+		<label for="title">Title:</label>
+		<input type="text" id="title" name="title"><br><br>
+		<label for="description">Description:</label>
+		<textarea id="description" name="description"></textarea><br><br>
+        <label for="price">Price:</label>
+		<input type="text" id="price" name="price" value="Rs.  "> <br><br>
+		<input type="submit" value="Add Image">
+	</form>
+      </div>
+
+      <div id="imageContainer" class="tabcontent"></div>
+
+
+    <div id="cartContainer" class="tabcontent">
+        
+        <!-- <div id="cartimage"></div> -->
+ </div>
+
+ <script>
+  function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByTagName("a");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+ </script>
+	
+	<script src="script.js"></script>
+      
+    
+</body>
+</html>
